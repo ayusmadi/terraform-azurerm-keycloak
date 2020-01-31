@@ -66,7 +66,7 @@ resource "azurerm_virtual_machine" "main" {
   os_profile {
     computer_name  = var.vm_name
     admin_username = var.admin_username
-    admin_password = random_password.password
+    admin_password = random_password.password.result
     custom_data    = file("./keycloak.sh")
   }
 
