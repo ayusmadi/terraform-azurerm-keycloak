@@ -6,7 +6,7 @@ Terraform module to deploy Keycloak service
 | Name | Version |
 |------|---------|
 | azurerm | ~> 1.42 |
-| random | n/a |
+| random | ~> 2.2.1 |
 
 ## Inputs
 
@@ -25,4 +25,5 @@ Terraform module to deploy Keycloak service
 
 | Name | Description |
 |------|-------------|
+| admin\_password | Password to access Keycloak virtual machine |
 | private\_ip\_address | The first private IP address of the network interface |
