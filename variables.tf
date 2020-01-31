@@ -30,8 +30,8 @@ variable "admin_public_key" {
 
 variable "tags" {
   description = "Placeholder"
-  type        = "map"
-
+  type        = map(string)
+  
   default = {
     environment = "development"
     service     = "keycloak"
