@@ -1,35 +1,35 @@
 variable "vm_name" {
-  description = "Placeholder"
+  description = "Specifies the name of the Virtual Machine. Changing this forces a new resource to be created."
 }
 
 variable "vm_size" {
-  description = "Placeholder"
+  description = "Specifies the size of the Virtual Machine."
   default     = "Standard_DS1_v2"
 }
 
 variable "existing_rg" {
-  description = "Placeholder"
+  description = "Specifies the name of the resource group the existing Virtual Network is located in."
 }
 
 variable "existing_vnet_name" {
-  description = "Placeholder"
+  description = "Specifies the name of the existing Virtual Network."
 }
 
 variable "existing_subnet_name" {
-  description = "Placeholder"
+  description = "Specifies the name of the existing Subnet."
 }
 
 variable "admin_username" {
-  description = "Placeholder"
+  description = "Specifies the name of the local administrator account."
   default     = "keycloak"
 }
 
 variable "admin_public_key" {
-  description = "Placeholder"
+  description = "Content of admin_username authorized_keys file"
 }
 
 variable "tags" {
-  description = "Placeholder"
+  description = "A mapping of tags to assign to the Virtual Machine."
   type        = map(string)
   
   default = {
