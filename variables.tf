@@ -21,6 +21,7 @@ variable "existing_subnet_name" {
 
 variable "admin_username" {
   description = "Placeholder"
+  default     = "keycloak"
 }
 
 variable "admin_public_key" {
