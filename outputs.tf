@@ -4,7 +4,7 @@ output "private_ip_address" {
 }
 
 output "admin_password" {
-  value       = azurandom_password.password.result
+  value       = random_password.password.result
   description = "Password to access Keycloak virtual machine"
   sensitive   = true
 }
