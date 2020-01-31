@@ -67,6 +67,7 @@ resource "azurerm_virtual_machine" "main" {
     computer_name  = var.vm_name
     admin_username = var.admin_username
     admin_password = random_password.password
+    custom_data    = file("./keycloak.sh")
   }
 
   os_profile_linux_config {
@@ -77,8 +78,6 @@ resource "azurerm_virtual_machine" "main" {
       path     = "/home/${var.admin_username}/.ssh/authorized_keys"
     }
   }
-
-  custom_data = file("./keycloak.sh")
 
   tags = var.tags
 }
