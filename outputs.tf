@@ -4,7 +4,7 @@ output "private_ip_address" {
 }
 
 output "public_ip_address" {
-  value       = azurerm_network_interface.public_ip_address.main.ip_address
+  value       = azurerm_public_ip.main.ip_address
   description = "Public IP address associated with the network interface"
 }
 
