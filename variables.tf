@@ -21,7 +21,7 @@ variable "existing_subnet_name" {
 
 variable "admin_username" {
   description = "Specifies the name of the local administrator account."
-  default     = "keycloak"
+  default     = "linuxadmin"
 }
 
 variable "admin_public_key" {
@@ -34,6 +34,5 @@ variable "tags" {
   
   default = {
     environment = "development"
-    service     = "keycloak"
   }
 }

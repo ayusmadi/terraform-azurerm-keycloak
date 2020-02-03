@@ -24,6 +24,13 @@ resource "random_password" "password" {
   override_special = "!@#$%&"
 }
 
+resource "azurerm_public_ip" "main" {
+  name                = "${var.vm_name}-pip"
+  location            = data.azurerm_resource_group.location
+  resource_group_name = data.azurerm_resource_group.name
+  allocation_method   = "Dynamic"
+}
+
 resource "azurerm_network_interface" "main" {
   name                = "${var.vm_name}-nic"
   location            = data.azurerm_resource_group.main.location
@@ -33,6 +40,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "ipconfiguration1"
     subnet_id                     = data.azurerm_subnet.main.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.main.id
   }
 }
 
@@ -68,7 +76,6 @@ resource "azurerm_virtual_machine" "main" {
     computer_name  = var.vm_name
     admin_username = var.admin_username
     admin_password = random_password.password.result
-    custom_data    = file("${path.module}/keycloak.sh")
   }
 
   os_profile_linux_config {
