@@ -26,8 +26,8 @@ resource "random_password" "password" {
 
 resource "azurerm_public_ip" "main" {
   name                = "${var.vm_name}-pip"
-  location            = data.azurerm_resource_group.location
-  resource_group_name = data.azurerm_resource_group.name
+  location            = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
   allocation_method   = "Dynamic"
 }
 
