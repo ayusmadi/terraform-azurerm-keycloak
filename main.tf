@@ -76,6 +76,7 @@ resource "azurerm_virtual_machine" "main" {
     computer_name  = var.vm_name
     admin_username = var.admin_username
     admin_password = random_password.password.result
+    custom_data    = var.custom_data
   }
 
   os_profile_linux_config {
