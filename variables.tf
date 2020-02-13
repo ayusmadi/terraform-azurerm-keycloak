@@ -41,3 +41,8 @@ variable "custom_data" {
   description = "Specifies custom data to supply to the machine. On Linux-based systems, this can be used as a cloud-init script."
   default     = "apt_upgrade: true"
 }
+
+variable "delete_disks_on_termination" {
+  description = "Delete all disks on when virtual machine is deleted"
+  default     = false
+}
