@@ -111,3 +111,8 @@ resource "azurerm_network_security_group" "main" {
 
   tags = var.tags
 }
+
+resource "azurerm_subnet_network_security_group_association" "main" {
+  subnet_id                 = data.azurerm_subnet.main.id
+  network_security_group_id = azurerm_network_security_group.main.id
+}
