@@ -91,3 +91,23 @@ resource "azurerm_virtual_machine" "main" {
 
   tags = var.tags
 }
+
+resource "azurerm_network_security_group" "main" {
+  name                = "${var.vm_name}-nsg"
+  location            = data.azurerm_resource_group.main.location
+  resource_group_name = data.azurerm_resource_group.main.name
+
+  security_rule {
+    name                       = "ssh"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = var.tags
+}
