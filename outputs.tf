@@ -8,6 +8,11 @@ output "public_ip_address" {
   description = "Public IP address associated with the network interface"
 }
 
+output "admin_username" {
+  value       = var.admin_username
+  description = "Username to access the Windows virtual machine"
+}
+
 output "admin_password" {
   value       = random_password.password.result
   description = "Password to access the Linux virtual machine"
