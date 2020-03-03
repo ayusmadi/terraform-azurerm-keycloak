@@ -25,6 +25,8 @@ Terraform module to deploy a Linux virtual machine
 
 | Name | Description |
 |------|-------------|
+| admin\_username | Username to access the Windows virtual machine |
 | admin\_password | Password to access the Linux virtual machine |
 | private\_ip\_address | The first private IP address of the network interface |
 | public\_ip\_address | Public IP address associated with the network interface |
+| fqdn | Fully qualified domain name of the A DNS record associated with the public IP. domain_name_label must be specified to get the fqdn. This is the concatenation of the domain_name_label and the regionalized DNS zone |
